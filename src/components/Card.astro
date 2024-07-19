@@ -11,9 +11,8 @@ const { icon, title } = Astro.props;
 
 <article class="card sl-flex">
 	<p class="title sl-flex">
-		<!-- Ignore the error TS throws here - size requires a number, but due to the way 
-		 the component is written, strings work fine and are actually desirable in this case. -->
-		{icon && <Icon name={icon} class="icon" size="1.333em" />}
+		<!-- TODO: Change size to 1.333em to match Starlight's cards when astro-icon/#227 gets fixed -->
+		{icon && <Icon name={icon} class="icon" size={33} />}
 		<span set:html={title} />
 	</p>
 	<div class="body"><slot /></div>

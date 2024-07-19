@@ -12,3 +12,5 @@ yarn dev
 ```
 
 Make any changes you want, then commit and make a PR.
+
+You can suggest/discuss any changes in [GH Discussions.](https://github.com/nullish-cat/thepiracywiki/discussions)

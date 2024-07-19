@@ -1,0 +1,41 @@
+---
+title: Welcome to The Piracy Wiki
+description: Your guide to sailing the high seas
+template: splash
+hero:
+  tagline: Your guide to sailing the high seas
+  image:
+    file: ../../assets/pirate.gif
+  actions:
+    - text: Start Here!
+      link: /guides/start/
+      icon: right-arrow
+      variant: primary
+    - text: Glossary
+      link: /reference/glossary
+      icon: right-arrow
+---
+
+import { Aside, CardGrid } from '@astrojs/starlight/components';
+import Card from "../../components/Card.astro";
+
+<Aside title="This site is still in an early state!" type="danger">
+	We're still working hard on constructing the ship and plugging any holes. Expect a lot of missing / incomplete pages.
+</Aside>
+
+## Next steps
+
+<CardGrid stagger>
+	<Card title="Movies/TV" icon="material-symbols:video-library">
+		[Watch](/guides/stream), [torrent](/guides/torrent) or [download](/guides/ddl-video) your favorite shows and movies.
+	</Card>
+	<Card title="Software" icon="material-symbols:code-blocks">
+		[Download](/guides/ddl-soft) and crack/install your favorite software.
+	</Card>
+	<Card title="Games" icon="material-symbols:gamepad">
+		Play everything from [modern hits](/guides/ddl-games) to [cult classics.](/guides/emulation)
+	</Card>
+	<Card title="Reading" icon="material-symbols:book">
+		Read your favorite [books](/guides/reading) and [manga/comics.](/guides/manga)
+	</Card>
+</CardGrid>

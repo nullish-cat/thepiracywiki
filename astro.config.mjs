@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [starlight({
     title: 'The Piracy Wiki',
     social: {
-      github: 'https://github.com/withastro/starlight'
+      github: 'https://github.com/nullish-cat/thepiracywiki'
     },
     sidebar: [{
       label: 'Guides',

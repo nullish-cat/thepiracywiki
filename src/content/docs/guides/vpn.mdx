@@ -1,8 +1,167 @@
 ---
 title: VPN
-description: stub
+description: How to protect your privacy online
 ---
 
-{/* TODO */}
+import { Aside, Tabs, TabItem } from "@astrojs/starlight/components"
 
-stub, to be written soon™ ~ nullish
+VPN (known as Virtual Private Network) is a piece of software that lets you redirect all your internet traffic to another server. This can help you hide what you're doing online when using commercial VPNs, as all of the traffic is mixed in with several other users' actions.
+
+<Aside type="caution">
+    As with everything on the internet, you should not immediately trust VPNs with being 100% private. VPNs only help with hiding the IP from the host - there are still plenty of other ways you can be identified. Some VPN services may also have logging setup, meaning it's possible you may be losing your privacy using a VPN rather than gaining it.
+</Aside>
+
+<Aside>
+    Free VPNs (while existing, with some being decent) are generally not recommended. They're generally very restrictive, such as no torrenting, limited servers, data, etc. The paid services we list here are very cheap.
+</Aside>
+
+## Paid Services
+
+Exact statistics might be out of date. Last updated on the 20th of July, 2024.
+
+* [AirVPN](https://airvpn.org/)
+  - Starts at €7 a month (~7.62 USD.) Depending on sales and plan lengths, this can be between €5 to €2.75 a month. (~5.44-3 USD.)
+  - 257 servers in 22 countries.
+  - Allows 5 concurrent devices.
+  - Allows port forwarding.
+  - No log policy (**unproven** - although it should be noted that this VPN has existed since 2010 and uses FOSS. It also hasn't been acquired by any major group or company. If it was discovered to be logged, it would've been done by now.)
+* [ProtonVPN](https://protonvpn.com/)
+  - This has a free plan, but it's limited to 3 locations and does not allow torrenting.
+  - Starts at €10 a month (~10.89 USD.) 1 year plan is priced at €5 a month. (~5.44 USD.)
+  - 6349 servers in 100 countries.
+  - Allows 10 concurrent devices.
+  - Allows port forwarding.
+  - No log policy [(proven.)](https://protonvpn.com/blog/transparency-report/)
+* [Mullvad](https://mullvad.net)
+  - Flat rate at €5 a month (~5.44 USD.) No sales or discounts.
+  - 688 servers in 45 countries.
+  - Allows 5 concurrent devices.
+  - **No port forwarding.**
+  - No log policy [(proven.)](https://mullvad.net/en/blog/2023/4/20/mullvad-vpn-was-subject-to-a-search-warrant-customer-data-not-compromised)
+
+## Free Services
+
+* [Windscribe](https://windscribe.com/)
+  - 10GB of monthly data. Requires gmail.
+  - 10 countries on the free version.
+  - Allows unlimited concurrent devices.
+  - Allows port forwarding.
+  - No ["identifying"](https://windscribe.com/features/no-identifying-logs/) logs **(unproven.)**
+* [WARP+](https://one.one.one.one/)
+  - 10GB of monthly data. However, this can be worked around. [See below for details.](#unlimited-warp-data)
+  - 310 servers in 120 countries.
+  - Allows 5 concurrent devices.
+  - **No port forwarding.**
+  - [Limited logs](https://developers.cloudflare.com/warp-client/privacy/) **(unproven.)**
+* [Riseup](https://riseup.net/en/vpn)
+  - Unlimited data (although note that this service can be quite slow.)
+  - 6 servers in 4 countries.
+  - Allows unlimited concurrent devices (there's no account system, so they can't implement this anyway.)
+  - **No port forwarding.**
+  - No log policy (**unproven** - although with their ideology, it's very likely they're not lying.)
+
+### Unlimited WARP+ data
+There are several ways you can get unlimited data on WARP+, which can make it worthwhile to use (despite its limitations.) However, WARP tracks data and can do **hardware** bans if found. This is why we use a WireGuard config using [WGCF](https://github.com/ViRb3/wgcf) instead:
+
+*(This part has been adapted from [this rentry guide.](https://rentry.co/warpwarning2))*
+1. Download the latest release of WGCF [here.](https://github.com/ViRb3/wgcf/releases/tag/latest)
+2. Rename the file to `wgcf`
+3. Open Terminal.
+    - If you're on Windows 10 or below, open Command Prompt.
+4. Change your working directory to your Downloads folder:
+    - Windows: `cd %userprofile%/Downloads`
+    - Mac: `cd ~/Downloads`
+    - Linux: Usually `cd ~/Downloads` (depends on the distro, but you should already know your folder.)
+5. Run `wgcf register`, then `wgcf generate`.
+    - You will now have two files: `wgcf-profile.conf` and `wgcf-account.toml`.
+6. Open the WARP app and go to Account settings. Copy the account key here.
+7. Open `wgcf-account.toml` in your text editor (Notepad, TextEdit, Kate, etc.) Replace the `license_key` field with your account key.
+8. Run `wgcf update` and `wgcf generate`.
+
+You can now import the `wgcf-profile.conf` file to any Wireguard client in order to use WARP safely.
+
+<Tabs>
+  <TabItem label="Desktop">
+    TODO
+    {/* TODO */}
+  </TabItem>
+  <TabItem label="Android">
+    TODO
+    {/* TODO */}
+  </TabItem>
+  <TabItem label="iOS">
+    TODO
+    {/* TODO */}
+  </TabItem>
+</Tabs>
+
+As for generating unlimited data:
+
+* [nxvvvv/warp-plus](https://github.com/nxvvvv/warp-plus)
+  - Simple Python script hosted on repl.it.
+* [totoroterror/warp-cloner](https://github.com/totoroterror/warp-cloner)
+  - Simple Python script that you run on local hardware.
+* [t.me/warpplus](https://t.me/warpplus) & [t.me/generatewarpplusbot](https://t.me/generatewarpplusbot)
+  - Telegram services that uses keys. The former is a group that regularly posts unlimited data keys, the latter is a bot that can auto generate them. (Note that you will have to replace your `license_key`, update and regenerate.)
+
+## Torrent clients
+For use with torrent clients, you'll want to "bind" the VPN to it. This will prevent the client from working without a VPN, thus preventing any ISP notices.
+
+<Tabs syncKey="clients">
+  <TabItem label="qBittorrent">
+    {/* TODO */}
+    TODO
+  </TabItem>
+  <TabItem label="Deluge">
+    {/* TODO */}
+    TODO
+  </TabItem>
+  <TabItem label="Transmission">
+    {/* TODO */}
+    TODO
+  </TabItem>
+  <TabItem label="LibreTorrent">
+    {/* TODO */}
+    TODO
+  </TabItem>
+</Tabs>
+
+It should also be noted that port forwarding should be set up if your service supports it. Port forwarding allows you to connect to peers that have their ports closed, which means you can have better speeds.
+
+First, you'll want to have a port opened on the VPN side:
+
+<Tabs>
+  <TabItem label="AirVPN">
+    {/* TODO */}
+    TODO
+  </TabItem>
+  <TabItem label="ProtonVPN">
+    {/* TODO */}
+    TODO
+  </TabItem>
+  <TabItem label="Windscribe">
+    {/* TODO */}
+    TODO
+  </TabItem>
+</Tabs>
+
+Now to set it on the torrent client side:
+
+<Tabs syncKey="clients">
+  <TabItem label="qBittorrent">
+    {/* TODO */}
+    TODO
+  </TabItem>
+  <TabItem label="Deluge">
+    {/* TODO */}
+    TODO
+  </TabItem>
+  <TabItem label="Transmission">
+    {/* TODO */}
+    TODO
+  </TabItem>
+  <TabItem label="LibreTorrent">
+    {/* TODO */}
+    TODO
+  </TabItem>
+</Tabs>

@@ -12,13 +12,9 @@ export default defineConfig({
     },
     sidebar: [{
       label: 'Guides',
-      items: [{
-        label: 'Start Here!',
-        slug: 'guides/start'
-      }, {
-        label: 'Torrenting',
-        slug: 'guides/torrent'
-      }]
+      autogenerate: {
+        directory: 'guides'
+      }
     }, {
       label: 'Reference',
       autogenerate: {

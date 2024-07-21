@@ -7,6 +7,17 @@ import icon from "astro-icon";
 export default defineConfig({
   integrations: [starlight({
     title: 'The Piracy Wiki',
+    defaultLocale: 'root',
+    locales: {
+      root: {
+        label: 'English',
+        lang: 'en',
+      },
+      "ja": {
+        label: "日本語",
+        lang: "ja"
+      }
+    },
     social: {
       github: 'https://github.com/nullish-cat/thepiracywiki'
     },

@@ -1,0 +1,43 @@
+---
+title: 海賊版Wikiへようこそ
+description: 外洋航海のガイド
+template: splash
+hero:
+  tagline: 外洋航海のガイド
+  image:
+    file: ../../../assets/pirate.gif
+  actions:
+    - text: ここから始める！
+      link: /guides/start/
+      icon: right-arrow
+      variant: primary
+    - text: 用語集
+      link: /reference/glossary
+      icon: right-arrow
+---
+
+{/* TODO: Proper translation */}
+
+import { Aside, CardGrid } from '@astrojs/starlight/components';
+import Card from "../../../components/Card.astro";
+
+<Aside title="このサイトはまだ初期段階です。" type="danger">
+	私たちはまだ船の建造と穴の塞ぎに一生懸命取り組んでいます。多くの欠落/不完全なページがあることを予想してください。また、この言語は現在 Google を使用して機械翻訳されています。適切な翻訳はすぐに提供されます。
+</Aside>
+
+## 次のステップ
+
+<CardGrid stagger>
+	<Card title="映画 / テレビ" icon="material-symbols:video-library">
+		お気に入りの番組や映画を[視聴](/guides/stream)、[トレント](/guides/torrent)、[ダウンロード](/guides/ddl-video)できます。
+	</Card>
+	<Card title="ソフトウェア" icon="material-symbols:code-blocks">
+		[ダウンロード](/guides/ddl-soft)して、お気に入りのソフトウェアをクラック/インストールします。
+	</Card>
+	<Card title="ゲーム" icon="material-symbols:gamepad">
+		[最新ヒット作](/guides/ddl-games)から[カルトクラシック](/guides/emulation)まで、あらゆるゲームをプレイできます。
+	</Card>
+	<Card title="読む" icon="material-symbols:book">
+		お気に入りの[本](/guides/reading)や[マンガ/コミック](/guides/manga)を読んでください。
+	</Card>
+</CardGrid>

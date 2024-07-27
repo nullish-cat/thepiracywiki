@@ -1,0 +1,43 @@
+---
+title: Добро пожаловать на Пиратскую Вики
+description: Ваш гид по плаванию в открытом море
+template: splash
+hero:
+  tagline: Ваш гид по плаванию в открытом море
+  image:
+    file: ../../../assets/pirate.gif
+  actions:
+    - text: Начало здесь!
+      link: /ru/guides/start/
+      icon: right-arrow
+      variant: primary
+    - text: Глоссарий
+      link: /ru/reference/glossary
+      icon: right-arrow
+---
+
+{/* TODO: Proper translation / надлежащий перевод */}
+
+import { Aside, CardGrid } from '@astrojs/starlight/components';
+import Card from "../../../components/Card.astro";
+
+<Aside title="Этот сайт все еще находится на ранней стадии разработки!" type="danger">
+	Мы все еще усердно работаем над созданием корабля и заделыванием любых дыр. Ожидайте много отсутствующих / неполных страниц. Кроме того, эта страница в настоящее время переведена с помощью машины Google. Правильный перевод будет предоставлен на более позднем этапе.
+</Aside>
+
+## Следующие шаги
+
+<CardGrid stagger>
+	<Card title="Фильмы/телесериал" icon="material-symbols:video-library">
+		[Смотрите](/ru/guides/stream), [торрент](/ru/guides/torrent) или [скачивайте](/ru/guides/ddl-video) ваши любимые шоу и фильмы.
+	</Card>
+	<Card title="Программное обеспечение" icon="material-symbols:code-blocks">
+		[Скачать](/ru/guides/ddl-soft) и взломать/установить ваше любимое программное обеспечение.
+	</Card>
+	<Card title="Видеоигры" icon="material-symbols:gamepad">
+		Играйте во все, от [современных хитов](/ru/guides/ddl-games) до [культовой классики.](/ru/guides/emulation)
+	</Card>
+	<Card title="Чтение" icon="material-symbols:book">
+		Читайте свои любимые [книги](/ru/guides/reading) и [мангу/комиксы.](/ru/guides/manga)
+	</Card>
+</CardGrid>

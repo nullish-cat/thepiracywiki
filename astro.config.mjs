@@ -13,6 +13,10 @@ export default defineConfig({
         label: 'English',
         lang: 'en',
       },
+      "ru": {
+        label: "Русский",
+        lang: "ru"
+      },
       "ja": {
         label: "日本語",
         lang: "ja"

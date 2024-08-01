@@ -1,0 +1,29 @@
+---
+title: Complimentary Addons
+description: Browser extensions that every pirate should have.
+---
+
+import { Aside, Icon, Tabs, TabItem } from "@astrojs/starlight/components"
+
+Most people use their browser without any modifications whatsoever - for some people, this might be fine, but there are plenty of addons that could improve your browsing experience, especially if you're pirating.
+
+## Adblock
+
+<Aside type="caution">
+  Due to Chromium's deprecation of Manifest v2 (the spec for chrome extenssions), adblocks are heavily hindered on their platform. It is recommended to use [Firefox](https://firefox.com/) instead. You can also use a fork like [Brave](https://brave.com/) that allows v2, however due to the spec being deprecated and addons being removed from the Chrome Web Store, it is recommended to simply switch to Firefox or its forks.
+</Aside>
+<Aside>
+  Please note that general adblocks (such as UBO and ABP, but not specific blocks like SponsorBlock) should not be combined together, as this can cause instabilities.
+</Aside>
+
+There's really only one adblock you need, and it's [uBlock Origin.](https://github.com/gorhill/uBlock) Some other blockers (like Adblock Plus) allow what they called "Acceptable Ads", which defeat the whole point of blockers. Others are simply not as extensive as UBO.
+
+For YouTube, there is also [SponsorBlock,](https://sponsor.ajay.app/) which can block any sponsor segment on a video, as well as intros, outros, subscribe reminders, etc. For Twitch, you can use [TTV LOL Pro](https://github.com/younesaassila/ttv-lol-pro) with [these proxies.](https://wiki.cdn-perfprod.com/v/v1/must-read/proxies) You can also use the Alternative Player extension ([Chrome](https://chrome.google.com/webstore/detail/alternate-player-for-twit/bhplkbgoehhhddaoolmakpocnenplmhf), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/twitch_5/)), however this merely "hides" the ads, not blocking it, meaning you'll still need to wait for the ads to finish.
+
+For Twitter, you can use [OldTwitter.](https://github.com/dimdenGD/OldTwitter) It is mainly meant to recreate the old layout that Twitter had back in 2015, however, it has the additional feature of blocking any ad tweets. (Specifically, ones that are marked as ads or promotions. It won't block tweets simply promoting a product, but not actually paying to advertise a tweet.)
+
+# Streaming
+On certain [streaming sites,](/guides/stream) they lack any closed captions. Most do not have captions for languages other than English. For this, you can use [Substital](https://substital.com/) to add any caption you want, as well as get some automatically from [opensubtitles.](https://www.opensubtitles.org) Please see their ["getting started" page](https://substital.com/getting-started) and [their FAQ page](https://substital.com/faq) for more details on how to use it.
+
+{/* TODO: Double check and see if the movie-web / sudo-flix extension is still needed and include it here. */}
+{/* TODO: Other extensions (Maybe Stylus, LibRedirect or Dark Reader. Also definitely cs.rin.ru helper.) */}
